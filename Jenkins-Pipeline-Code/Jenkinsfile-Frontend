@@ -38,10 +38,12 @@ pipeline {
         stage('Quality Check') {
             steps {
                 script {
-                    waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token' 
+                    timeout(time: 1, unit: 'HOURS') {
+                    waitForQualityGate abortPipeline: false 
                 }
             }
         }
+}
         stage('Trivy File Scan') {
             steps {
                 dir('client') {
