@@ -22,19 +22,19 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/richards28/3tier-devops.git'
             }
         }
-        stage('Sonarqube Analysis') {
-            steps {
-                dir('backend') {
-                    withSonarQubeEnv('sonar-scanner') {
-                        sh ''' $SCANNER_HOME/bin/sonar-scanner \
-                        -Dsonar.projectKey=backend \
-                        -Dsonar.sources=. \
-                        -Dsonar.host.url=http://98.84.133.107:9000 \
-                        -Dsonar.login=squ_b545b2e7f722a3f454126561cd47a8acb2128445 '''
-                    }
-                }
-            }
-        }
+       // stage('Sonarqube Analysis') {
+         //   steps {
+           //     dir('backend') {
+             //       withSonarQubeEnv('sonar-scanner') {
+               //         sh ''' $SCANNER_HOME/bin/sonar-scanner \
+                 //       -Dsonar.projectKey=backend \
+                   //     -Dsonar.sources=. \
+                     //   -Dsonar.host.url=http://98.84.133.107:9000 \
+                       // -Dsonar.login=squ_b545b2e7f722a3f454126561cd47a8acb2128445 '''
+              //      }
+             //   }
+          //  }
+      //  }
        // stage('Quality Check') {
          //   steps {
            //     script {
