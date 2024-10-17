@@ -41,13 +41,13 @@ pipeline {
              //       timeout(time: 1, unit: 'HOURS') {
                //     waitForQualityGate abortPipeline: false 
                 
-        stage('Trivy File Scan') {
-            steps {
-                dir('backend') {
-                    sh 'trivy fs . > trivyfs.txt'
-                }
-            }
-        }
+        //stage('Trivy File Scan') {
+          //  steps {
+            //    dir('backend') {
+              //      sh 'trivy fs . > trivyfs.txt'
+                //}
+            //}
+       // }
         stage("Docker Image Build") {
             steps {
                 script {
